@@ -27,6 +27,15 @@ async function bootstrap() {
     .setTitle('ERP API Documentation')
     .setDescription(
       `
+      PLEASE NOTE: This is a demo API for an ERP system. It is not meant for production use.
+      I made use of https://console.neon.tech/ POSTGRES database for this project.
+      TYPEORM CLI Commands: 
+        --Create Migration
+        npm run typeorm:cli migration:generate src/database/migrations/v-verison-number
+        
+        -- Run Migration
+        npm run typeorm:cli migration:run
+
       1. Authentication
         - First time setup automatically creates a SuperAdmin user:
           * Email: superadmin@example.com
