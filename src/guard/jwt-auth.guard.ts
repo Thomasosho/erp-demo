@@ -17,13 +17,13 @@ export class JwtAuthGuard implements CanActivate {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       console.log('decoded user data', decoded);
-      
+
       // Set the complete user object including permissions
       request.user = {
         id: decoded.sub,
         email: (decoded as jwt.JwtPayload).email,
         roles: (decoded as jwt.JwtPayload).roles,
-        permissions: (decoded as jwt.JwtPayload).permissions
+        permissions: (decoded as jwt.JwtPayload).permissions,
       };
 
       return true;
